@@ -1,3 +1,4 @@
+    
 const steem = require('steem')
 const colors = require('colors')
 const config = require('./config.json')
@@ -21,7 +22,7 @@ function initTimer () {
             })
             process.stdout.write("\rCURRENT LOCAL TIME : ".yellow + currentTime.green)
             var currentHour = new Date().getHours()
-            if (currentHour == config.distribution_hour && new Date().getMinutes() == config.minutes) {
+            if (currentHour == config.distribution_hour  && new Date().getMinutes() == config.minutes) {
                 clearInterval(TimeTimer)
                 console.log("\n")
                 InitMint()
@@ -76,13 +77,17 @@ function mint(callback) {
                             }
                             else
                                 console.log("ERR".bgRed, "WHILE SENDING")
+                            
+                            callback()
                     })
+                }
+                else {
+                    callback()
                 }
             }
             else
                 console.log("ERR".bgRed,  "WHILE MINTING".yellow)
 
-            callback()
     })
 }
 
