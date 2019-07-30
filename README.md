@@ -23,7 +23,8 @@ Bot is easy to config, your will have to edit the `config.json` file according t
         "sending_keys" : {
             "active" : "" // the key of the sending account
         },
-        "shares" : [""], // this is the amount users will be send, its in csv format ie. `["ali-h,1500","theguruasia,750"]`
+        "shares" : [""], // this is the amount users will be send, its in csv format ie. 
+                         // ["ali-h,1500","theguruasia,750"]
         "memo" : ""
     },
     "distribution_hour" : 0, // distrubution happens daily, set it to 0 for 12:00 PM 
