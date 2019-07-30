@@ -49,7 +49,7 @@ function mint(callback) {
             if (!err) {
                 console.log("MINTING SUCCESSFULL".green)
                 if (config.transfers.active == true) {
-                    console.log("NOW SENDING SHARES")
+                    console.log("NOW SENDING SHARES".green)
                     var jsonOBJ = []
                     for (num in config.transfers.shares) {
                         if (config.transfers.shares[num] != "") {
@@ -68,16 +68,16 @@ function mint(callback) {
                         }
                     }
                     steem.broadcast.customJson(
-                        config.transfers.sending_account, 
-                        [config.transfers.sending_keys.active], [], 
+                        config.transfers.sending_keys.active, 
+                        [config.transfers.sending_account], [], 
                         "ssc-mainnet1", JSON.stringify(jsonOBJ), 
                         function(err, result) {
                             if (!err) {
-                                console.log("TRANSFERS FINISHED".green)
+                                console.log("TRANSFER SUCCESSFULL".green)
                             }
                             else
-                                console.log("ERR".bgRed, "WHILE SENDING")
-                            
+                                console.log("ERR".bgRed, "WHILE SENDING".yellow)
+
                             callback()
                     })
                 }
