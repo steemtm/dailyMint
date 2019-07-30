@@ -27,7 +27,7 @@ Bot is easy to config, your will have to edit the `config.json` file according t
                          // ["ali-h,1500","theguruasia,750"]
         "memo" : ""
     },
-    "distribution_hour" : 0, // distrubution happens daily, set it to 0 for 12:00 PM 
+    "distribution_hour" : 0, // distrubution happens daily, set it to 0 for 12:00 AM 
     "minute" : 0, // The minutes of the hour in which the distrubution should start
     "isset" : false // set it true after configuring the bot
 }
