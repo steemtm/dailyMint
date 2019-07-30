@@ -45,6 +45,6 @@ $ node app.js
 ***
 
 ## Development
-If you want to contribute or have any suggestions so you can Express them on my Discord `A-jaX#9816` or on Steemit @ali-h.
+If you want to contribute or have any suggestions so you can Express them on my Discord `Ali H#9816` or on Steemit @ali-h.
 
 If you Encounter any issue or Bugs, Please report them [Here](https://github.com/alihassanah/PoS-Distribution/issues). Thanks!
