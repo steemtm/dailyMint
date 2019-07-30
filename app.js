@@ -31,7 +31,7 @@ function initTimer () {
 }
 
 function mint(callback) {
-    var json = {
+    var json = [{
         "contractName":"tokens",
         "contractAction":"issue",
         "contractPayload":{
@@ -39,7 +39,7 @@ function mint(callback) {
             "to": config.mint_to_account,
             "quantity": config.amount
         }
-    }
+    }]
     steem.broadcast.customJson(
         config.keys.active, 
         [config.username], [], 
@@ -47,6 +47,37 @@ function mint(callback) {
         function(err, result) {
             if (!err) {
                 console.log("MINTING SUCCESSFULL".green)
+                if (config.transfers.active == true) {
+                    console.log("NOW SENDING SHARES")
+                    var jsonOBJ = []
+                    for (num in config.transfers.shares) {
+                        if (config.transfers.shares[num] != "") {
+                            var user = config.transfers.shares[num].split(',')
+                            var json = {
+                                "contractName":"tokens",
+                                "contractAction":"transfer",
+                                "contractPayload":{
+                                    "symbol": config.token.symbol,
+                                    "to": user[0],
+                                    "quantity": user[1],
+                                    "memo" : config.transfers.memo
+                                }
+                            }
+                            json.push(jsonOBJ)
+                        }
+                    }
+                    steem.broadcast.customJson(
+                        config.transfers.sending_account, 
+                        [config.transfers.sending_keys.active], [], 
+                        "ssc-mainnet1", JSON.stringify(jsonOBJ), 
+                        function(err, result) {
+                            if (!err) {
+                                console.log("TRANSFERS FINISHED".green)
+                            }
+                            else
+                                console.log("ERR".bgRed, "WHILE SENDING")
+                    })
+                }
             }
             else
                 console.log("ERR".bgRed,  "WHILE MINTING".yellow)
