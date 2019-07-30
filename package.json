@@ -1,0 +1,25 @@
+{
+  "name": "dailymint",
+  "version": "1.0.0",
+  "description": "A tool for Minting Custom amount of Steem Engine Token Daily.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alihassanah/dailyMint.git"
+  },
+  "keywords": [
+    "JS",
+    "steem",
+    "mint",
+    "steem-engine"
+  ],
+  "author": "Ali H",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alihassanah/dailyMint/issues"
+  },
+  "homepage": "https://github.com/alihassanah/dailyMint#readme"
+}

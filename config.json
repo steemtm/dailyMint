@@ -1,0 +1,14 @@
+{
+    "username" : "",
+    "keys" : {
+        "active" : ""
+    },
+    "mint_to_account" : "",
+    "amount" : "",
+    "token" : {
+        "symbol" : ""
+    },
+    "distribution_hour" : 0,
+    "minute" : 0,
+    "isset" : false
+}
