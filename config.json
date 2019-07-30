@@ -8,6 +8,15 @@
     "token" : {
         "symbol" : ""
     },
+    "transfers" : {
+        "active" : false,
+        "sending_account" : "",
+        "sending_keys" : {
+            "active" : ""
+        },
+        "shares" : [""],
+        "memo" : ""
+    },
     "distribution_hour" : 0,
     "minutes" : 0,
     "isset" : false
