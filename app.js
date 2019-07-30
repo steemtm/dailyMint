@@ -63,7 +63,7 @@ function mint(callback) {
                                     "memo" : config.transfers.memo
                                 }
                             }
-                            json.push(jsonOBJ)
+                            jsonOBJ.push(json)
                         }
                     }
                     steem.broadcast.customJson(
